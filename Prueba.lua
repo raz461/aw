@@ -1,3 +1,14 @@
+--autoupdater--
+local script_name = GetScriptName()
+
+if http.Get("https://raw.githubusercontent.com/raz461/aw/main/version.txt") ~= 1.1 then
+    file.Delete(script_name)
+    file.Open(script_name,"w")
+    file.Write(script_name,http.Get("https://raw.githubusercontent.com/raz461/aw/main/Prueba.lua"))
+end
+
+
+
 local ref = gui.Reference("Misc")
 local path = gui.Tab(ref, "NeverScript.rage", "Never Rage")
 local path2 = gui.Tab(ref, "NeverScript.misc", "Never Misc")
